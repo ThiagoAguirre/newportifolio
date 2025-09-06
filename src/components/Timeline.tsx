@@ -1,42 +1,44 @@
 
 import { Calendar, MapPin } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Timeline = () => {
+  const { t } = useTranslation();
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const experiences = [
     {
       period: "2024 - Presente",
-      title: "Senior Backend Developer",
-      company: "TechCorp Solutions",
-      location: "Remote",
-      description: "Liderança técnica em projetos de alta complexidade, arquitetura de microsserviços escaláveis, otimização de performance de APIs e mentoria de equipes de desenvolvimento.",
+      title: t("Senior Backend Developer"),
+      company: t("TechCorp Solutions"),
+      location: t("Remote"),
+      description: t("Liderança técnica em projetos de alta complexidade, arquitetura de microsserviços escaláveis, otimização de performance de APIs e mentoria de equipes de desenvolvimento."),
       technologies: ["Python", "FastAPI", "PostgreSQL", "Docker", "AWS", "Redis"]
     },
     {
       period: "2023 - 2024",
-      title: "Backend Developer",
-      company: "DataFlow Systems",
-      location: "São Paulo, SP",
-      description: "Desenvolvimento de pipelines de dados robustos, implementação de APIs RESTful de alta performance e integração com sistemas legados complexos.",
+      title: t("Backend Developer"),
+      company: t("DataFlow Systems"),
+      location: t("São Paulo, SP"),
+      description: t("Desenvolvimento de pipelines de dados robustos, implementação de APIs RESTful de alta performance e integração com sistemas legados complexos."),
       technologies: ["Python", "Django", "Pandas", "Apache Kafka", "MongoDB"]
     },
     {
       period: "2022 - 2023",
-      title: "Python Developer",
-      company: "CloudTech Innovations",
-      location: "Remote",
-      description: "Construção de aplicações backend escaláveis, automação de processos com Python e desenvolvimento de soluções de processamento de dados em tempo real.",
+      title: t("Python Developer"),
+      company: t("CloudTech Innovations"),
+      location: t("Remote"),
+      description: t("Construção de aplicações backend escaláveis, automação de processos com Python e desenvolvimento de soluções de processamento de dados em tempo real."),
       technologies: ["Python", "Flask", "SQLAlchemy", "Celery", "Docker"]
     },
     {
       period: "2021 - 2022",
-      title: "Junior Backend Developer",
-      company: "StartupLab",
-      location: "Belo Horizonte, MG",
-      description: "Início da especialização em backend, desenvolvimento de APIs, aprendizado de boas práticas de desenvolvimento e participação em projetos de inovação.",
+      title: t("Junior Backend Developer"),
+      company: t("StartupLab"),
+      location: t("Belo Horizonte, MG"),
+      description: t("Início da especialização em backend, desenvolvimento de APIs, aprendizado de boas práticas de desenvolvimento e participação em projetos de inovação."),
       technologies: ["Python", "Django", "MySQL", "Git", "Linux"]
     }
   ];
@@ -67,7 +69,7 @@ const Timeline = () => {
     <section id="timeline" className="py-20 px-4 max-w-6xl mx-auto relative z-10">
       <div className="text-center mb-16">
         <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-          Career Timeline
+          {t('Experience')}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-neon-green to-neon-blue mx-auto rounded-full"></div>
       </div>
