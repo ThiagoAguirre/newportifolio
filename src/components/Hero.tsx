@@ -1,16 +1,18 @@
-
+import React from 'react';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 import TypedText from './TypedText';
 import ParticlesBackground from './ParticlesBackground';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
-  const typedStrings = [
-    "Backend Developer",
-    "Python Specialist", 
-    "API Architect",
-    "Data Engineer",
-    "System Designer"
-  ];
+  const { t, i18n } = useTranslation();
+  const typedStrings = React.useMemo(() => [
+    t('Backend Developer'),
+    t('Python Specialist'),
+    t('API Architect'),
+    t('Data Engineer'),
+    t('System Designer')
+  ], [i18n.language, t]);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -20,7 +22,7 @@ const Hero = () => {
         <div className="animate-fade-in">
           <div className="mb-8">
             <h1 className="text-2xl md:text-3xl text-text-secondary mb-4 font-light">
-              Hi, I'm
+              {t('Welcome to my portfolio')}
             </h1>
             <h2 className="text-6xl md:text-8xl font-bold mb-6 neon-text text-white">
               THIAGO AGUIRRE
@@ -36,7 +38,7 @@ const Hero = () => {
           </div>
           
           <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-2xl mx-auto leading-relaxed">
-            Especialista em desenvolvimento backend, criando sistemas robustos, APIs escaláveis e soluções de dados de alta performance
+            {t('Especialista em desenvolvimento backend, criando sistemas robustos, APIs escaláveis e soluções de dados de alta performance')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
@@ -44,14 +46,15 @@ const Hero = () => {
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-transparent border-2 border-neon-green text-neon-green px-8 py-4 rounded-lg font-semibold hover:bg-neon-green hover:text-black transition-all duration-300 neon-border text-lg"
             >
-              VIEW MY WORK
+              {t('VIEW MY WORK')}
             </button>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            <a
+              href="/cv.pdf"
+              download
               className="bg-neon-green text-black px-8 py-4 rounded-lg font-semibold hover:bg-neon-blue transition-all duration-300 text-lg shadow-lg"
             >
-              GET IN TOUCH
-            </button>
+              {t('Download CV')}
+            </a>
           </div>
 
           <div className="flex justify-center space-x-8">

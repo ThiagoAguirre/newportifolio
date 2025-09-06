@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
+import { useTranslation } from 'react-i18next';
 
 interface TypedTextProps {
   strings: string[];
@@ -18,6 +19,7 @@ const TypedText = ({
   className = ""
 }: TypedTextProps) => {
   const el = useRef(null);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -32,7 +34,7 @@ const TypedText = ({
     return () => {
       typed.destroy();
     };
-  }, [strings, typeSpeed, backSpeed, loop]);
+  }, [strings, typeSpeed, backSpeed, loop, i18n.language]);
 
   return <span ref={el} className={`typing-cursor ${className}`} />;
 };
