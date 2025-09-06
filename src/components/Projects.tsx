@@ -1,35 +1,37 @@
 
 import { ExternalLink, Github, Database, Server, Code } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Projects = () => {
+  const { t } = useTranslation();
   const projects = [
     {
-      title: "High-Performance API Gateway",
-      description: "Sistema de gateway de APIs escalável com rate limiting, autenticação JWT e balanceamento de carga automático. Processa mais de 10k requests/segundo.",
+      title: t("High-Performance API Gateway"),
+      description: t("Sistema de gateway de APIs escalável com rate limiting, autenticação JWT e balanceamento de carga automático. Processa mais de 10k requests/segundo."),
       technologies: ["Python", "FastAPI", "Redis", "PostgreSQL", "Docker"],
       icon: <Server className="text-neon-green" size={32} />,
       github: "#",
       demo: "#"
     },
     {
-      title: "Real-time Data Pipeline",
-      description: "Pipeline de processamento de dados em tempo real com Apache Kafka, processando streams de dados de múltiplas fontes com baixa latência.",
+      title: t("Real-time Data Pipeline"),
+      description: t("Pipeline de processamento de dados em tempo real com Apache Kafka, processando streams de dados de múltiplas fontes com baixa latência."),
       technologies: ["Python", "Apache Kafka", "Pandas", "MongoDB", "AWS"],
       icon: <Database className="text-neon-blue" size={32} />,
       github: "#",
       demo: "#"
     },
     {
-      title: "Microservices Architecture",
-      description: "Arquitetura completa de microsserviços com comunicação assíncrona, circuit breakers e observabilidade avançada para aplicações enterprise.",
+      title: t("Microservices Architecture"),
+      description: t("Arquitetura completa de microsserviços com comunicação assíncrona, circuit breakers e observabilidade avançada para aplicações enterprise."),
       technologies: ["Python", "Django", "RabbitMQ", "PostgreSQL", "Kubernetes"],
       icon: <Code className="text-neon-green" size={32} />,
       github: "#",
       demo: "#"
     },
     {
-      title: "Analytics Engine",
-      description: "Engine de analytics em tempo real com processamento distribuído, capaz de analisar terabytes de dados com agregações complexas.",
+      title: t("Analytics Engine"),
+      description: t("Engine de analytics em tempo real com processamento distribuído, capaz de analisar terabytes de dados com agregações complexas."),
       technologies: ["Python", "Apache Spark", "Elasticsearch", "Grafana", "AWS"],
       icon: <Database className="text-neon-blue" size={32} />,
       github: "#",
@@ -41,7 +43,7 @@ const Projects = () => {
     <section id="projects" className="py-20 px-4 max-w-6xl mx-auto relative z-10">
       <div className="text-center mb-16">
         <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-          Projects
+          {t('Projects')}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-neon-green to-neon-blue mx-auto rounded-full"></div>
       </div>

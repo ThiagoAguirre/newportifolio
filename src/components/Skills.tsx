@@ -1,14 +1,16 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Database, Code, Server, Settings } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Skills = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   const skillCategories = [
     {
-      title: "Backend",
+      title: t("Backend"),
       icon: <Server className="text-neon-green" size={32} />,
       skills: [
         { name: "Python", level: 95 },
@@ -18,7 +20,7 @@ const Skills = () => {
       ]
     },
     {
-      title: "Data",
+      title: t("Data"),
       icon: <Database className="text-neon-blue" size={32} />,
       skills: [
         { name: "Pandas", level: 92 },
@@ -28,7 +30,7 @@ const Skills = () => {
       ]
     },
     {
-      title: "Ferramentas",
+      title: t("Ferramentas"),
       icon: <Settings className="text-neon-green" size={32} />,
       skills: [
         { name: "Docker", level: 85 },
@@ -60,7 +62,7 @@ const Skills = () => {
     <section id="skills" className="py-20 px-4 max-w-6xl mx-auto relative z-10" ref={sectionRef}>
       <div className="text-center mb-16">
         <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-          Skills
+          {t('Skills')}
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-neon-green to-neon-blue mx-auto rounded-full"></div>
       </div>
